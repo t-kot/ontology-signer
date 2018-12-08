@@ -1,0 +1,109 @@
+{
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://example.com/root.json",
+  "type": "object",
+  "title": "authrequesters",
+  "required": [
+    "callback_addr",
+    "description",
+    "name",
+    "ontid",
+    "ta_info",
+    "signature"
+  ],
+  "properties": {
+    "callback_addr": {
+      "$id": "#/properties/callback_addr",
+      "type": "string",
+      "title": "callback_addr",
+      "default": "",
+      "examples": [
+        "https://xxx"
+      ],
+      "pattern": "^(.*)$"
+    },
+    "description": {
+      "$id": "#/properties/description",
+      "type": "string",
+      "title": "description",
+      "default": "",
+      "examples": [
+        "coinwallet"
+      ],
+      "pattern": "^(.*)$"
+    },
+    "name": {
+      "$id": "#/properties/name",
+      "type": "string",
+      "title": "name",
+      "default": "",
+      "examples": [
+        "coinwallet"
+      ],
+      "pattern": "^(.*)$"
+    },
+    "ontid": {
+      "$id": "#/properties/ontid",
+      "type": "string",
+      "title": "ontid",
+      "default": "",
+      "examples": [
+        "did:ont:AXXxiWCuJXmuPGnsBji4cqWqV1VrKx8nkM"
+      ],
+      "pattern": "^(.*)$"
+    },
+    "ta_info": {
+      "$id": "#/properties/ta_info",
+      "type": "array",
+      "title": "ta_info",
+      "items": {
+        "$id": "#/properties/ta_info/items",
+        "type": "object",
+        "title": "The Items Schema",
+        "required": [
+          "claim_contexts",
+          "ontid"
+        ],
+        "properties": {
+          "claim_contexts": {
+            "$id": "#/properties/ta_info/items/properties/claim_contexts",
+            "type": "array",
+            "title": "The Claim_contexts Schema",
+            "items": {
+              "$id": "#/properties/ta_info/items/properties/claim_contexts/items",
+              "type": "string",
+              "title": "The Items Schema",
+              "default": "",
+              "examples": [
+                "claim:cfca_authentication",
+                "claim:sensetime_authentication"
+              ],
+              "pattern": "^(.*)$"
+            }
+          },
+          "ontid": {
+            "$id": "#/properties/ta_info/items/properties/ontid",
+            "type": "string",
+            "title": "ontid",
+            "default": "",
+            "examples": [
+              "did:ont:AXXxiWCuJXmuPGnsBji4cqWqV1VrKx8nkM"
+            ],
+            "pattern": "^(.*)$"
+          }
+        }
+      }
+    },
+    "signature": {
+      "$id": "#/properties/signature",
+      "type": "string",
+      "title": "The Signature Schema",
+      "default": "",
+      "examples": [
+        "AQp2ka0OJG5K7jlnaV8jwWneye7knHWTNN+D3yUly="
+      ],
+      "pattern": "^(.*)$"
+    }
+  }
+}

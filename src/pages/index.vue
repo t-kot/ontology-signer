@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <el-card>
     <h1>Sign JSON</h1>
 
     <el-form>
@@ -13,7 +13,7 @@
         <copy-input :text='signed'></copy-input>
       </el-form-item>
     </el-form>
-  </div>
+  </el-card>
 </template>
 
 <script>
