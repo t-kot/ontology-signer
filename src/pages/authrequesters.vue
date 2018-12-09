@@ -28,8 +28,8 @@
         <el-input v-model='model.description'></el-input>
       </el-form-item>
       <el-form-item label='ta_info'>
-        <el-form-item label='claims_contexts'>
-          <el-input v-model='model.ta_info.claims_contexts'></el-input>
+        <el-form-item label='claim_contexts'>
+          <el-input v-model='model.ta_info.claim_contexts'></el-input>
         </el-form-item>
         <el-form-item label='ontid'>
           <el-input v-model='model.ta_info.ontid'></el-input>
@@ -50,7 +50,8 @@
         <el-alert type='error' v-if='response.error'>
           {{ response.desc }}
         </el-alert>
-        <el-alert type='info' v-else>
+        <el-alert type='success' v-if='response.desc === "SUCCESS"'>
+          Successfully registered.
         </el-alert>
       </div>
     </el-form>
@@ -74,7 +75,7 @@ export default {
       name: '',
       ontid: '',
       ta_info: {
-        claims_contexts: '',
+        claim_contexts: 'claim:email_authentication',
         ontid: '',
       }
     },
@@ -112,7 +113,7 @@ export default {
         ontid: this.model.ontid,
         ta_info: [
           {
-            claims_contexts: [this.model.ta_info.claims_contexts],
+            claim_contexts: [this.model.ta_info.claim_contexts],
             ontid: this.model.ta_info.ontid
           },
         ],
@@ -126,7 +127,7 @@ export default {
     async onRegister() {
       this.requesting = true
       const endpoint = 'https://api.ont.network/api/v1/ontpass/authrequesters'
-      const response = await axios.post(endpoint, this.request)
+      const response = await axios.post(endpoint, this.requestWithSignature)
       this.response = response.data
       this.requesting = false
     }
