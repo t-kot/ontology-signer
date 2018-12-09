@@ -1,21 +1,19 @@
 # ontology-signer
 
-> A Vue.js project
+https://ontology-signer.firebaseapp.com
 
-## Build Setup
+1. Get outid
 
-``` bash
-# install dependencies
-npm install
+Visit https://ontology-signer.firebaseapp.com/thirdparty/ontid
 
-# serve with hot reload at localhost:8080
-npm run dev
+Save PrivateKey & OntId.
 
-# build for production with minification
-npm run build
+[Imgur](https://i.imgur.com/TDiA383.png)
 
-# build for production and view the bundle analyzer report
-npm run build --report
-```
+2. Registration
 
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+Visit http://localhost:8080/authrequesters
+
+[Imgur](https://i.imgur.com/Wr1Z6tc.png)
+
+[Imgur](https://i.imgur.com/Nwu7u9W.png)
