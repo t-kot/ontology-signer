@@ -15,5 +15,21 @@
       <i class="el-icon-menu"></i>
       <span>auth requesters</span>
     </el-menu-item>
+    <el-menu-item index="3" @click="openGithub">
+      <i class="el-icon-menu"></i>
+      <span>Github</span>
+    </el-menu-item>
   </el-menu>
 </template>
+
+<script>
+export default {
+  methods: {
+    openGithub() {
+      const url = 'https://github.com/t-kot/ontology-signer'
+      open(url, '_blank')
+    }
+  }
+}
+</script>
+
